@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "learn-opengl",
+      "name": "tinyrenderer-mac",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
@@ -12,7 +12,7 @@
       "externalConsole": false,
       "osx": {
         "MIMode": "lldb",
-        "program": "${workspaceFolder}/output/HelloGL"
+        "program": "${workspaceFolder}/output/tinyrenderer"
       },
       "preLaunchTask": "Build with Make"
     }
