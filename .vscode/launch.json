@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "tinyrenderer-win",
+      "name": "learn-opengl-win",
       "type": "cppdbg",
       "request": "launch",
       "args": [],

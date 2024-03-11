@@ -1,48 +1,37 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Clean build folder",
-      "type": "shell",
-      "command": "rm",
-      "args": ["-rf", "${workspaceFolder}/build/*"],
-      "options": {
-        "shell": {
-          "executable": "/bin/bash",
-          "args": ["-c"]
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Clean build folder",
+        "type": "shell",
+        "command": "cmd",
+        "args": ["/C", "del", "/q", "/s", "${workspaceFolder}\\build\\*"]
+      },
+      {
+        "label": "Clean exe file",
+        "type": "shell",
+        "command": "cmd",
+        "args": ["/C", "del", "/q", "${workspaceFolder}\\output\\*.exe"]
+      },
+      {
+        "label": "Generate CMake Build",
+        "type": "shell",
+        "command": "cmake",
+        "args": ["-G", "Unix Makefiles", ".."],
+        "dependsOn": ["Clean exe file", "Clean build folder"],
+        "options": {
+          "cwd": "${workspaceFolder}/build"
+        }
+      },
+      {
+        "label": "Build with Make",
+        "type": "shell",
+        "command": "make",
+        "dependsOn": ["Generate CMake Build"],
+        "options": {
+          "cwd": "${workspaceFolder}/build"
         }
       }
-    },
-    {
-      "label": "Clean output file",
-      "type": "shell",
-      "command": "rm",
-      "args": ["-f", "${workspaceFolder}/output/*.exe"],
-      "options": {
-        "shell": {
-          "executable": "/bin/bash",
-          "args": ["-c"]
-        }
-      }
-    },
-    {
-      "label": "Generate CMake Build",
-      "type": "shell",
-      "command": "cmake",
-      "args": ["-G", "Unix Makefiles", ".."],
-      "dependsOn": ["Clean output file", "Clean build folder"],
-      "options": {
-        "cwd": "${workspaceFolder}/build"
-      }
-    },
-    {
-      "label": "Build with Make",
-      "type": "shell",
-      "command": "make",
-      "dependsOn": ["Generate CMake Build"],
-      "options": {
-        "cwd": "${workspaceFolder}/build"
-      }
-    }
-  ]
-}
+    ]
+  }
+  
