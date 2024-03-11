@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "learn-opengl",
+      "name": "learn-opengl-mac",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
