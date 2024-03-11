@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(tinyrenderer)
+project(tinyrenderer_mac)
 add_definitions(-std=c++11)
 
 # 设置代码文件
