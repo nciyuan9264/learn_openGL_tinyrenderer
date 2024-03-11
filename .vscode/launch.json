@@ -10,9 +10,10 @@
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "osx": {
-        "MIMode": "lldb",
-        "program": "${workspaceFolder}/output/tinyrenderer_win"
+      "windows": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb.exe",
+        "program": "${workspaceFolder}/output/HelloGL.exe"
       },
       "preLaunchTask": "Build with Make"
     }
