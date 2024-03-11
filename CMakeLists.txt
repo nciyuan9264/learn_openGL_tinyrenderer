@@ -20,6 +20,9 @@ link_libraries(${GLFW_LINK})
 set(SOURCES ${SRC_DIR}glad.c ${SRC_DIR}main.cpp)
 add_executable(HelloGL ${SOURCES})
 
+# 设置可执行文件输出路径
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
+
 # 链接系统的 OpenGL 框架
 if (APPLE)
     target_link_libraries(HelloGL "-framework OpenGL")

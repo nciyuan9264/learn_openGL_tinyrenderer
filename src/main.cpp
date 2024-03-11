@@ -37,7 +37,7 @@ int main()
     return -1;
   }
 
-  glViewport(0, 0, 800, 600);
+  glViewport(100, 0, 400, 200);
   while (!glfwWindowShouldClose(window))
   {
     processInput(window);
