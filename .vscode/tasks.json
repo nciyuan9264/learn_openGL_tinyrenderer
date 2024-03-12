@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Clean build folder",
+      "label": "Clean build folder for Mac",
       "type": "shell",
       "command": "rm",
       "args": ["-rf", "${workspaceFolder}/build/*"],
@@ -14,7 +14,7 @@
       }
     },
     {
-      "label": "Clean output file",
+      "label": "Clean output file for Mac",
       "type": "shell",
       "command": "rm",
       "args": ["-f", "${workspaceFolder}/output/*.exe"],
@@ -26,20 +26,51 @@
       }
     },
     {
-      "label": "Generate CMake Build",
+      "label": "Generate CMake Build for Mac",
       "type": "shell",
       "command": "cmake",
       "args": ["-G", "Unix Makefiles", ".."],
-      "dependsOn": ["Clean output file", "Clean build folder"],
+      "dependsOn": ["Clean output file for Mac", "Clean build folder for Mac"],
       "options": {
         "cwd": "${workspaceFolder}/build"
       }
     },
     {
-      "label": "Build with Make",
+      "label": "Build with Make for Mac",
       "type": "shell",
       "command": "make",
-      "dependsOn": ["Generate CMake Build"],
+      "dependsOn": ["Generate CMake Build for Mac"],
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      }
+    },
+    {
+      "label": "Clean build folder for Win",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/C", "del", "/q", "/s", "${workspaceFolder}\\build\\*"]
+    },
+    {
+      "label": "Clean output file for Win",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/C", "del", "/q", "${workspaceFolder}\\output\\*.exe"]
+    },
+    {
+      "label": "Generate CMake Build for Win",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["-G", "Unix Makefiles", ".."],
+      "dependsOn": ["Clean output file for Win", "Clean build folder for Win"],
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      }
+    },
+    {
+      "label": "Build with Make for Win",
+      "type": "shell",
+      "command": "make",
+      "dependsOn": ["Generate CMake Build for Win"],
       "options": {
         "cwd": "${workspaceFolder}/build"
       }

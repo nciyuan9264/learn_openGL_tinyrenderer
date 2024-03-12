@@ -12,9 +12,15 @@
       "externalConsole": false,
       "osx": {
         "MIMode": "lldb",
-        "program": "${workspaceFolder}/output/tinyrenderer_mac"
+        "program": "${workspaceFolder}/output/tinyrenderer_mac",
+        "preLaunchTask": "Build with Make for Mac"
       },
-      "preLaunchTask": "Build with Make"
+      "windows": {
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb.exe",
+        "program": "${workspaceFolder}/output/tinyrenderer_win.exe",
+        "preLaunchTask": "Build with Make for Win"
+      },
     }
   ]
 }
