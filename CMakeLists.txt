@@ -11,6 +11,7 @@ include_directories(${HEADER_DIR})
 
 # 设置可执行文件输出路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
-
+# 开调试模式
+set(CMAKE_BUILD_TYPE "Debug")
 file(GLOB SOURCES ${SRC_DIR}/*.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
